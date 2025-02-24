@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wexcom - IT & Telecom Solutions</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0; /* Menghilangkan margin default */
+            overflow-x: hidden; /* Mencegah scroll horizontal */
+        }
+        /* Video Background */
+        .video-container {
+            position: fixed; /* Video tetap di tempat saat scrolling */
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh; /* Tinggi video mencakup seluruh viewport */
+            z-index: -1; /* Menempatkan video di belakang konten */
+            overflow: hidden;
+        }
+        .video-container video {
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            object-fit: cover;
+        }
+        /* Overlay untuk meningkatkan keterbacaan teks */
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5); /* Overlay hitam dengan transparansi 50% */
+            z-index: 0;
+        }
+        /* Memastikan konten header dan hero section muncul di atas video */
+        header, .hero-section {
+            position: relative;
+            z-index: 1;
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-white">
+    <!-- Video Background -->
+    <div class="video-container">
+        <video autoplay muted loop>
+            <source src="Assets/video_s/Motion-Animation-Looping.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="overlay"></div> <!-- Overlay untuk meningkatkan keterbacaan teks -->
+    </div>
+
+    <!-- Header -->
+    <header class="p-10 flex justify-between items-center rounded-lg shadow-lg">
+        <img src="Assets/Logo.svg" alt="Wexcom Logo" class="h-5">
+        <nav class="bg-gray-700 px-4 py-2 rounded-lg shadow-md">
+            <ul class="flex gap-4">
+                <li><a href="#" class="text-gray-300 hover:text-white">Home</a></li>
+                <li><a href="#" class="text-gray-300 hover:text-white">Pricing</a></li>
+                <li><a href="#" class="text-gray-300 hover:text-white">About</a></li>
+                <li><a href="#" class="text-gray-300 hover:text-white">Contact Us</a></li>
+            </ul>
+        </nav>
+        <div class="flex items-center gap-4">
+            <a href="#" class="text-gray-300 hover:text-white">Support</a>
+            <a href="#" class="text-gray-300 hover:text-white">Contact</a>
+            <button class="bg-teal-500 px-4 py-2 rounded-lg text-white">Get the Offer</button>
+            <button class="text-gray-300 hover:text-white"><i class="fas fa-search"></i></button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section relative text-center py-20">
+        <div class="relative z-10 max-w-4xl mx-auto text-left">
+            <p class="bg-gray-700 text-white px-4 py-2 rounded-full inline-block">🔗 Take your business further!</p>
+            <h2 class="text-4xl font-bold mt-4">The World’s Largest Companies Trust Wexcom!</h2>
+            <p class="text-teal-400 text-lg mt-2">Hardware and Software as a Service</p>
+            <div class="mt-6 flex gap-4">
+                <button class="bg-teal-500 px-6 py-2 rounded-lg flex items-center gap-2">Get in Touch ➝</button>
+                <button class="bg-gray-700 px-6 py-2 rounded-lg flex items-center gap-2">Support Center ➝</button>
+            </div>
+        </div>
+        <div class="absolute right-10 bottom-10 max-w-sm text-right text-gray-300 z-10">
+            <p>Certified and empowered to develop, manage, and execute large-scale projects. We have expertise and focus on delivering products that truly add value to our customers.</p>
+        </div>
+    </section>
+
+  <!-- Statistics Section -->
+  <section class="mt-10 p-10">
+    <!-- Kotak Besar untuk Menampung Semua Konten -->
+    <div class="bg-white bg-opacity-10 p-8 rounded-lg shadow-lg backdrop-blur-sm border border-white border-opacity-10">
+        <!-- Judul dan Deskripsi -->
+        <div class="text-center">
+            <div class="text-xl font-bold text-teal-400">Wexcom in Numbers</div>
+            <p class="text-lg text-gray-300 mt-2">Present in over <span class="text-teal-400">10 Countries</span>.</p>
+        </div>
+        
+        <!-- Grid untuk Angka -->
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-6 text-center mt-6">
+            <!-- Angka 1 -->
+            <div>
+                <h3 class="text-3xl font-bold text-teal-400">4000</h3>
+                <p class="text-gray-300 mt-2">Satisfied Customers</p>
+            </div>
+            <!-- Angka 2 -->
+            <div>
+                <h3 class="text-3xl font-bold text-teal-400">150K</h3>
+                <p class="text-gray-300 mt-2">Simultaneous Connections</p>
+            </div>
+            <!-- Angka 3 -->
+            <div>
+                <h3 class="text-3xl font-bold text-teal-400">3000</h3>
+                <p class="text-gray-300 mt-2">Kilometers of Fiber-optic Cable</p>
+            </div>
+            <!-- Angka 4 -->
+            <div>
+                <h3 class="text-3xl font-bold text-teal-400">7000</h3>
+                <p class="text-gray-300 mt-2">Cloud Environments</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- WEXCOM USA LLC Section -->
+<section class="relative mt-10 p-10 bg-cover bg-center" style="background: linear-gradient(to bottom, rgba(24, 157, 155, 0), rgba(10, 129, 162, 0.8)), url('Assets/Image_s/Transparent-Element.png');">
+    <div class="max-w-4xl mx-auto">
+        <!-- WEXCOM USA LLC Content with Two Columns -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 text-white">
+            <div >
+                <p class="text-4xl font-bold text-white">
+                    WEXCOM USA LLC
+                </p>
+                <p class="text-lg">
+                    (World Exchange Communication)
+                </p>
+                <p class="mt-4 text-lg">
+                    is a multinational company in the IT and Telecommunications sector, focused on products, services, and solutions for mission-critical operations.
+                </p>
+                <p class="mt-4 text-lg">
+                    Certified and empowered to develop, manage, and execute large-scale projects, we have expertise and focus on delivering products that truly add value to our customers' daily lives.
+                </p>
+            </div>
+            <div>
+                <p class="text-lg">
+                    The most complex problems in Telecommunications, IT, AI, Fiber Optic Networks, and Infrastructure are the challenges that drive our team.
+                </p>
+                <p class="mt-4 text-lg">
+                    As a global leader, Wexcom will facilitate your company’s daily operations, making your cost center achieve unimaginable goals.
+                </p>
+            </div>
+        </div>
+
+        <hr class="my-8 border-t-2 border-teal-400">
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 text-white">
+            <div >
+                <p class="text-lg font-bold text-white">
+                    As a global leader, Wexcom will facilitate your company’s daily operations,
+                </p>
+               
+            </div>
+            <div>
+               
+                <p class="mt-4 text-lg">
+                   making your cost center achieve unimaginable goals.
+                </p>
+            </div>
+        </div>
+
+
+        <!-- Brand Logos Section (6 Logos) -->
+        <div class="grid grid-cols-2 p-3 sm:grid-cols-3 lg:grid-cols-6 gap-4 text-center">
+            <img src="Assets/Brand Logo_s-01/IBM - Grayscale.svg" alt="IBM Logo" class="h-24 w-auto filter invert brightness-100">
+            <img src="Assets/Brand Logo_s-01/Dell - Grayscale.svg" alt="Dell Logo" class="h-24 w-auto filter invert brightness-100">
+         
+            <img src="Assets/Brand Logo_s-01/Oracle - Grayscale.svg" alt="Oracle Logo" class="h-24 w-auto filter invert brightness-100">
+            <img src="Assets/Brand Logo_s-01/EMC - Grayscale.svg" alt="EMC² Logo" class="h-24 w-auto filter invert brightness-100">
+            <img src="Assets/Brand Logo_s-01/Fortinet - Grayscale.svg" alt="Fortinet Logo" class="h-24 w-auto filter invert brightness-100">
+            <img src="Assets/Brand Logo_s-01/Microsoft - Grayscale.svg" alt="Microsoft Logo" class="h-24 w-auto filter invert brightness-100">
+        </div>
+        <div class="grid grid-cols-2 p-3 sm:grid-cols-3 lg:grid-cols-7 gap-4 text-center">
+            <img src="Assets/Brand Logo_s-01/Redhat - Grayscale.svg" alt="IBM Logo" class="h-24 w-auto filter invert brightness-100">
+            <img src="Assets/Brand Logo_s-01/Cisco - Grayscale.svg" alt="Dell Logo" class="h-24 w-auto filter invert brightness-100">
+         
+            <img src="Assets/Brand Logo_s-01/Juniper - Grayscale.svg" alt="Oracle Logo" class="h-24 w-auto filter invert brightness-100">
+            <img src="Assets/Brand Logo_s-01/Aruba - Grayscale.svg" alt="EMC² Logo" class="h-24 w-auto filter invert brightness-100">
+            <img src="Assets/Brand Logo_s-01/MikroTik - Grayscale.svg" alt="Fortinet Logo" class="h-24 w-auto filter invert brightness-100">
+            <img src="Assets/Brand Logo_s-01/Ciena - Grayscale.svg" alt="Microsoft Logo" class="h-24 w-auto filter invert brightness-100">
+            <img src="Assets/Brand Logo_s-01/Ubiquiti - Grayscale.svg" alt="Microsoft Logo" class="h-24 w-auto filter invert brightness-100">
+        
+        </div>
+
+        <div class="grid grid-cols-2 p-3 sm:grid-cols-3 lg:grid-cols-5 gap-4 text-center">
+            <img src="Assets/Brand Logo_s-01/Huawei - Grayscale.svg" alt="IBM Logo" class="h-24 w-auto filter invert brightness-100">
+            <img src="Assets/Brand Logo_s-01//Milesight - Grayscale.svg" alt="Dell Logo" class="h-24 w-auto filter invert brightness-100">
+         
+            <img src="Assets/Brand Logo_s-01/Seagate - Grayscale.svg" alt="Oracle Logo" class="h-24 w-auto filter invert brightness-100">
+            <img src="Assets/Brand Logo_s-01/Fujitsu - Grayscale.svg" alt="EMC² Logo" class="h-24 w-auto filter invert brightness-100">
+            <img src="Assets/Brand Logo_s-01/Fujitsu - Grayscale.svg" alt="EMC² Logo" class="h-24 w-auto filter invert brightness-100">
+           
+    </div>
+</section>
+
+
+
+
+    <!-- Services Section -->
+    <section class="bg-gray-800 py-20">
+        <div class="text-center text-xl font-bold text-teal-400">Our Services</div>
+        <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6 mt-6">
+            <div class="bg-gray-700 p-6 rounded-lg shadow-md">
+                <h3 class="text-2xl font-semibold">Smart Internet</h3>
+                <p class="text-gray-400 mt-2">High-speed, high-capacity Internet through our fiber-optic network.</p>
+            </div>
+            <div class="bg-gray-700 p-6 rounded-lg shadow-md">
+                <h3 class="text-2xl font-semibold">Smart Transit</h3>
+                <p class="text-gray-400 mt-2">Underground network interconnecting branches for optimal connectivity.</p>
+            </div>
+            <div class="bg-gray-700 p-6 rounded-lg shadow-md">
+                <h3 class="text-2xl font-semibold">Smart Pipe</h3>
+                <p class="text-gray-400 mt-2">Point-to-point transport with competitive cost through our underground network.</p>
+            </div>
+            <div class="bg-gray-700 p-6 rounded-lg shadow-md">
+                <h3 class="text-2xl font-semibold">Smart CDN</h3>
+                <p class="text-gray-400 mt-2">Access content from various operators directly through our Edge data centers.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="bg-gray-900 py-20 text-center">
+        <div class="text-3xl font-bold text-teal-400">Get in Touch</div>
+        <p class="text-gray-300 text-lg mt-4">Have questions? Reach out to us anytime!</p>
+        <form class="mt-8 space-y-6 max-w-md mx-auto">
+            <input type="text" placeholder="Your Name" class="w-full p-3 bg-gray-700 text-white rounded-lg" required>
+            <input type="email" placeholder="Your Email" class="w-full p-3 bg-gray-700 text-white rounded-lg" required>
+            <textarea placeholder="Your Message" class="w-full p-3 bg-gray-700 text-white rounded-lg" rows="4" required></textarea>
+            <button type="submit" class="w-full bg-teal-500 py-3 rounded-lg text-white">Send Message</button>
+        </form>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 py-6 text-center text-gray-400">
+        <p>&copy; 2025 Wexcom. All rights reserved.</p>
+    </footer>
+</body>
+</html>
