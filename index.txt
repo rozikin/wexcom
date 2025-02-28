@@ -1,0 +1,1147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wexcom - IT & Telecom Solutions</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Load Feather Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    </script>
+
+
+
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            overflow-x: hidden;
+        }
+
+        /* Video Background */
+        .video-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            z-index: -1;
+            overflow: hidden;
+        }
+
+        .video-container video {
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            object-fit: cover;
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            /* Darker overlay for better readability */
+            z-index: 0;
+        }
+
+        /* Ensuring header and hero sections appear above the video */
+        header,
+        .hero-section {
+            position: relative;
+            z-index: 1;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-900 text-white">
+
+    <!-- Video Background -->
+    <div class="video-container">
+        <video autoplay muted loop autoplay loop muted playsinline class="w-full h-full object-cover" loading="lazy">
+            <source src="Assets/video/video.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="overlay"></div>
+    </div>
+
+
+
+
+    <!-- Header Section -->
+    <header
+        class="p-5 md:p-8 flex justify-between items-center w-full fixed top-0 left-0 z-50 bg-gray-900 bg-opacity-70 shadow-md">
+
+        <!-- Top Right Support & Contact (Hidden on Mobile) -->
+        <div class="absolute top-4 right-8 flex gap-4 items-center text-sm hidden md:flex">
+            <a href="#" class="text-gray-300 hover:text-white">Support</a>
+            <a href="#" class="text-gray-300 hover:text-white">Contact</a>
+        </div>
+        <!-- Logo & Navigation -->
+        <div class="flex items-center gap-6 w-full">
+            <img src="Assets/Logo.svg" alt="Wexcom Logo" class="h-7 md:ml-10 ml-4 transition-all duration-300"
+                id="logo">
+
+            <!-- Navigation (Hidden on Mobile) -->
+            <nav
+                class="hidden md:flex justify-center gap-6 bg-gray-700 px-6 py-2 rounded-full shadow-md mx-auto backdrop-blur-sm border">
+                <a href="#home" class="text-gray-300 hover:text-white">Home</a>
+                <a href="#about" class="text-gray-300 hover:text-white">About</a>
+                <a href="#product" class="text-gray-300 hover:text-white">Product</a>
+                <a href="#services" class="text-gray-300 hover:text-white">Services</a>
+                <a href="#fiber" class="text-gray-300 hover:text-white">Fiber</a>
+                <a href="#telecom" class="text-gray-300 hover:text-white">Telecom</a>
+            </nav>
+        </div>
+
+        <!-- Get the Offer Button (Desktop) -->
+        <div class="hidden md:block">
+            <a href="#contactus"
+                class="bg-gradient-to-r from-teal-400 to-cyan-500 px-5 py-1 rounded-full text-white shadow-md whitespace-nowrap">
+                Get the Offer
+            </a>
+        </div>
+
+        <!-- Mobile Menu Button -->
+        <button id="menu-btn" class="md:hidden focus:outline-none">
+            <svg class="w-8 h-8 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+        </button>
+    </header>
+
+    <!-- Mobile Menu Overlay (Hidden initially) -->
+    <div id="mobile-overlay" class="fixed inset-0 bg-black bg-opacity-50 hidden transition-all duration-300 z-50"></div>
+
+    <!-- Mobile Menu -->
+    <nav id="mobile-menu"
+        class="fixed top-0 left-0 bg-gray-800 text-white p-12 flex flex-col items-start space-y-8 rounded-xl shadow-lg w-60 hidden transform translate-x-full transition-all duration-500 z-50">
+        <!-- Teks sidebar dengan posisi atas ke bawah -->
+        <a href="#home" class="text-gray-300 hover:text-white transition-all duration-300">Home</a>
+        <a href="#about" class="text-gray-300 hover:text-white transition-all duration-300">About</a>
+        <a href="#product" class="text-gray-300 hover:text-white transition-all duration-300">Product</a>
+        <a href="#services" class="text-gray-300 hover:text-white transition-all duration-300">Services</a>
+        <a href="#fiber" class="text-gray-300 hover:text-white transition-all duration-300">Fiber</a>
+        <a href="#telecom" class="text-gray-300 hover:text-white transition-all duration-300">Telecom</a>
+
+        <a href="#contactus"
+            class="bg-gradient-to-r from-teal-400 to-cyan-500 px-5 py-2 rounded-full text-white shadow-md whitespace-nowrap transition-all duration-300">
+            Get the Offer
+        </a>
+    </nav>
+
+
+
+
+
+    <section id="home" class="hero-section relative text-left py-20 mt-24 px-10 lg:px-20">
+        <div class="relative z-10 max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-1 gap-12 items-center">
+            <!-- Bagian Kiri (Teks) -->
+            <div>
+                <button class="bg-gray-800 text-gray-300 px-3 py-2 rounded-full inline-flex items-center gap-2 border">
+                    <img src="Assets/Iconic_s Pattern.svg" alt="Icon" class="h-5 w-6">
+                    Take Your Business Further
+                </button>
+
+                <p class="text-teal-400 text-lg mt-12">Hardware and Software as a Service</p>
+
+                <h4 class="text-4xl font-bold text-xl mt-1">The World’s Largest Companies</h4>
+                <h4 class="text-4xl font-bold mt-1">Trust Wexcom!</h4>
+
+                <!-- Menggunakan Grid untuk tombol dan deskripsi -->
+                <div class="mt-12 grid grid-cols-1 lg:grid-cols-2 gap-6 items-center">
+                    <!-- Kolom 1: Tombol (Bersebelahan) -->
+                    <div class="flex flex-wrap gap-4">
+                        <button
+                            class="bg-gradient-to-r from-teal-400 to-cyan-500 px-6 py-2 rounded-full flex items-center gap-2 text-lg shadow-lg">
+                            Get in Touch <img src="Assets/White Arrow-Icon.svg" alt="Icon" class="h-4 w-5">
+                        </button>
+                        <button class="bg-gray-700 px-6 py-2 rounded-full flex items-center gap-2 text-lg shadow-lg">
+                            Support Center <img src="Assets/White Arrow-Icon.svg" alt="Icon" class="h-4 w-5">
+                        </button>
+                    </div>
+
+                    <!-- Kolom 2: Paragraf (Lebar Diperkecil) -->
+                    <p class="text-gray-300 text-sm lg:text-base text-justify leading-relaxed col-span-1 max-w-md">
+                        Certified and empowered to develop, manage, and execute large-scale projects. We have expertise
+                        and focus on delivering products that truly add value to our customers' daily lives.
+                    </p>
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+
+
+    <div class="mt-3 p-5 relative">
+        <!-- Background Container -->
+        <div class="absolute inset-0 h-full">
+            <!-- Video (Setengah Atas) -->
+            <div class="h-1/2 w-full absolute top-0 left-0">
+
+            </div>
+
+            <!-- Warna Background (Setengah Bawah) -->
+            <div class="h-1/2 w-full absolute bottom-0 left-0 bg-[#01153B]"
+                style=" background-size: auto; background-position: center; ">
+            </div>
+        </div>
+
+        <!-- Content -->
+        <div
+            class="relative bg-white bg-opacity-10 p-8 rounded-3xl shadow-lg backdrop-blur-md  max-w-4xl mx-auto min-h-[200px] py-12 border">
+            <div class="text-left">
+                <p class="text-2xl font-bold text-gray-300">Wexcom in Numbers</p>
+                <p class="text-2xl sm:text-3xl text-gray-300 italic font-bold mt-2">
+                    Present in over <span class="text-teal-400">10 Countries.</span>
+                </p>
+            </div>
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-8 text-left mt-12">
+                <div>
+                    <h3 class="text-4xl font-bold text-white text-5xl">4000</h3>
+                    <p class="text-gray-300 mt-2">Satisfied Customers and Counting</p>
+                </div>
+                <div>
+                    <h3 class="text-4xl font-bold text-white text-5xl">150K</h3>
+                    <p class="text-gray-300 mt-2">Simultaneous Connections</p>
+                </div>
+                <div>
+                    <h3 class="text-4xl font-bold text-white text-5xl">3000</h3>
+                    <p class="text-gray-300 mt-2">Kilometers of Fiber-optic Cable</p>
+                </div>
+                <div>
+                    <h3 class="text-4xl font-bold text-white text-5xl">7000</h3>
+                    <p class="text-gray-300 mt-2">Cloud Environments</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <div class="bg-[#01153B] py-24 px-6"
+        style="background-image: url('Assets/Image_s/Transparent-Element.png'); background-size: contain; ">
+
+
+
+
+
+        <!-- WEXCOM USA LLC Section -->
+        <section id="about" class="py-12 px-6">
+
+            <div class="max-w-6xl mx-auto">
+                <button class="bg-gray-800 text-gray-300 px-3 py-2 rounded-full inline-flex items-center gap-2 border">
+                    <img src="Assets/Iconic_s Pattern.svg" alt="Icon" class="h-5 w-5">
+                    Who We Are and What We Do
+                </button>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 text-white mt-12">
+                    <div>
+                        <p class="text-7xl font-bold text-teal-400">WEXCOM</p>
+                        <p class="text-6xl font-bold text-white">USA, LLC</p>
+                        <p class="text-2xl mt-6">(World Exchange Communication)</p>
+                    </div>
+                    <div>
+                        <p class="text-lg text-white text-justify">
+                            is a multinational company in the IT and Telecommunications sector, focused on products,
+                            services, and solutions for mission-critical operations.
+                            The most complex problems in Telecommunications, IT, AI, Fiber Optic Networks, and
+                            Infrastructure are the challenges that drive our team.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="p-4 bg-white bg-opacity-10 p-8 rounded-3xl shadow-lg backdrop-blur-md mt-24 border">
+                    <div class="grid grid-cols-1 gap-6 text-white mt-6">
+                        <div>
+                            <h2 class="font-bold text-teal-400 text-3xl">
+                                As a global leader, Wexcom will facilitate<br>
+                                your company’s daily operations,
+                            </h2>
+                            <p class="mt-4">
+                                making your cost center achieve unimaginable goals. We take pride in<br>
+                                having a team of dedicated professionals, widely certified by
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-0.5 text-center">
+                        <img src="Assets/Brand Logo_s-01/IBM - Grayscale.svg" alt="IBM Logo"
+                            class="h-32 w-auto filter invert brightness-50 max-w-full object-contain">
+                        <img src="Assets/Brand Logo_s-01/Dell - Grayscale.svg" alt="Dell Logo"
+                            class="h-32 w-auto filter invert brightness-50 max-w-full object-contain">
+                        <img src="Assets/Brand Logo_s-01/Oracle - Grayscale.svg" alt="Oracle Logo"
+                            class="h-32 w-auto filter invert brightness-50 max-w-full object-contain">
+                        <img src="Assets/Brand Logo_s-01/EMC - Grayscale.svg" alt="EMC² Logo"
+                            class="h-32 w-auto filter invert brightness-50 max-w-full object-contain">
+                        <img src="Assets/Brand Logo_s-01/Fortinet - Grayscale.svg" alt="Fortinet Logo"
+                            class="h-32 w-auto filter invert brightness-50 max-w-full object-contain">
+                        <img src="Assets/Brand Logo_s-01/Microsoft - Grayscale.svg" alt="Microsoft Logo"
+                            class="h-32 w-auto filter invert brightness-50 max-w-full object-contain">
+                    </div>
+
+                    <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-7 gap-0.5 text-center mt-2">
+                        <img src="Assets/Brand Logo_s-01/Redhat - Grayscale.svg" alt="Redhat Logo"
+                            class="h-32 w-auto filter invert brightness-50 max-w-full">
+                        <img src="Assets/Brand Logo_s-01/Cisco - Grayscale.svg" alt="Cisco Logo"
+                            class="h-32 w-auto filter invert brightness-50 max-w-full">
+                        <img src="Assets/Brand Logo_s-01/Juniper - Grayscale.svg" alt="Juniper Logo"
+                            class="h-32 w-auto filter invert brightness-50 max-w-full">
+                        <img src="Assets/Brand Logo_s-01/Aruba - Grayscale.svg" alt="Aruba Logo"
+                            class="h-32 w-auto filter invert brightness-50 max-w-full">
+                        <img src="Assets/Brand Logo_s-01/MikroTik - Grayscale.svg" alt="Mikrotik Logo"
+                            class="h-32 w-auto filter invert brightness-50 max-w-full">
+                        <img src="Assets/Brand Logo_s-01/Ciena - Grayscale.svg" alt="Ciena Logo"
+                            class="h-32 w-auto filter invert brightness-50 max-w-full">
+                        <img src="Assets/Brand Logo_s-01/Ubiquiti - Grayscale.svg" alt="Ubiquiti Logo"
+                            class="h-32 w-auto filter invert brightness-50 max-w-full">
+                    </div>
+
+                    <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-7 gap-0.5 text-center mt-2">
+                        <img src="Assets/Brand Logo_s-01/Huawei - Grayscale.svg" alt="Huawei Logo"
+                            class="h-32 w-auto filter invert brightness-50 max-w-full">
+                        <img src="Assets/Brand Logo_s-01/Milesight - Grayscale.svg" alt="Milesight Logo"
+                            class="h-32 w-auto filter invert brightness-50 max-w-full">
+                        <img src="Assets/Brand Logo_s-01/Seagate - Grayscale.svg" alt="Seagate Logo"
+                            class="h-32 w-auto filter invert brightness-50 max-w-full">
+                        <img src="Assets/Brand Logo_s-01/Fujitsu - Grayscale.svg" alt="Fujitsu Logo"
+                            class="h-32 w-auto filter invert brightness-50 max-w-full">
+                        <div class="flex items-center h-32 col-span-2 sm:col-span-3 lg:col-span-3 text-center">
+                            <p class="text-lg text-white text-justify mx-auto">
+                                and many more, who follow each project's development, connected to the latest existing
+                                technologies, using artificial intelligence resources to deliver the true
+                                state-of-the-art in technology and security.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+
+
+
+
+
+        <section id="product" class="mt-16">
+
+            <div class="max-w-6xl mx-auto text-center">
+                <button class="bg-gray-800 text-gray-300 px-3 py-2 rounded-full inline-flex items-center gap-2 border">
+                    <img src="Assets/Iconic_s Pattern.svg" alt="Icon" class="h-5 w-5">
+                    Product and Solution
+                </button>
+            </div>
+            <div class="max-w-6xl mx-auto text-center mt-12">
+                <h2 class="text-3xl font-bold text-white mb-6">Our Product and Solution in Action</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-6 max-w-6xl mx-auto mt-12">
+                <!-- SD Wan - Large Card (Kiri) -->
+                <div
+                    class="md:col-span-2 md:row-span-2 bg-gradient-to-br from-[#091F38] to-[#122B46] rounded-xl shadow-lg relative overflow-hidden h-[200px] md:h-[500px]">
+                    <img src="Assets/Image_s/img-product-01.png" alt="SD Wan"
+                        class="w-full h-full object-cover absolute inset-0">
+                    <div class="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/80 to-transparent p-3">
+                        <h3 class="text-white text-2xl font-semibold">SD Wan</h3>
+                        <p class="text-gray-300 text-sm mt-2">
+                            Activation of hardware and software, with administration, management, and monitoring of
+                            equipment through nano 5G technology.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Colocation -->
+                <div
+                    class="bg-gradient-to-bl from-white/30 via-[#091F38] to-white/30 p-3 rounded-xl shadow-lg flex flex-col h-full border">
+                    <h3 class="text-white text-xl font-semibold mt-6">Colocation</h3>
+                    <p class="text-gray-300 text-sm mt-6">
+                        Host your entire infrastructure within WEXCOM’s Edge Data Centers, and rely on our technical
+                        team to manage and organize your routines. Multiple Locations worldwide
+                    </p>
+                </div>
+
+                <!-- Private and Hybrid Cloud -->
+                <div
+                    class="bg-gradient-to-br from-white/30 via-[#091F38] to-white/30 p-3 rounded-xl shadow-lg flex flex-col h-full border">
+                    <h3 class="text-white text-xl font-semibold mt-6">Private and Hybrid Cloud</h3>
+                    <p class="text-gray-300 text-sm mt-6">
+                        Utilize our cutting-edge cloud equipment to develop your project in the Cloud, AI and
+                        automation, with a footprint in multiple Countries. Windows, Linux, and Thousands of programming
+                        languages, connect with players like AWS, AZURE, and GOOLGE CLOUD.
+                    </p>
+                </div>
+
+                <!-- Smart IA -->
+                <div
+                    class="bg-gradient-to-bl from-white/30 via-[#091F38] 70% to-white/30 p-3 rounded-xl shadow-lg flex flex-col h-full border">
+                    <h3 class="text-white text-xl font-semibold mt-6">Smart IA</h3>
+                    <p class="text-gray-300 text-sm mt-6">
+                        Access various AI libraries and tools, producce your work with quick and secure access through
+                        our
+                        IA CLOUD.
+                    </p>
+                </div>
+
+                <!-- Wi-Fi -->
+                <div
+                    class="bg-gradient-to-br from-white/30 via-[#091F38] to-white/30 p-3 rounded-xl shadow-lg flex flex-col h-full border">
+                    <h3 class="text-white text-xl font-semibold mt-6">Wi-Fi</h3>
+                    <p class="text-gray-300 text-sm mt-6">
+                        We design and install intelligent and intuitive Wi-Fi networks for you.
+                    </p>
+                </div>
+            </div>
+
+
+
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-6 max-w-6xl mx-auto mt-6">
+                <!-- Grid 2 kolom untuk 4 item -->
+                <div class="grid grid-cols-2 gap-6 md:col-span-2">
+                    <!-- Outsourcing -->
+                    <div
+                        class="bg-gradient-to-bl from-white/30 via-[#091F38] to-white/30 p-6 rounded-xl shadow-lg flex flex-col h-full border">
+                        <h3 class="text-white text-xl font-semibold">Outsourcing</h3>
+                        <p class="text-gray-300 text-sm mt-2">
+                            Complete outsourcing , including server rental and sale, notebook, router, software, IP
+                            phones,
+                            and even ready-to-use Environments
+                        </p>
+                    </div>
+
+                    <!-- Smart City -->
+                    <div
+                        class="bg-gradient-to-br from-white/30 via-[#091F38] to-white/30 p-6 rounded-xl shadow-lg flex flex-col h-full border">
+                        <h3 class="text-white text-xl font-semibold">Smart City</h3>
+                        <p class="text-gray-300 text-sm mt-2">
+                            Real-time monitoring and electronic traffic solutions for modern cities.
+                        </p>
+                    </div>
+
+                    <!-- Smart Mobility -->
+                    <div
+                        class="bg-gradient-to-bl from-white/30 via-[#091F38] to-white/30 p-6 rounded-xl shadow-lg flex flex-col h-full border">
+                        <h3 class="text-white text-xl font-semibold">Smart Mobility</h3>
+                        <p class="text-gray-300 text-sm mt-2">
+                            Immediate transmission and telematics for vehicles, trains and fleet monitoring.
+                        </p>
+                    </div>
+
+                    <!-- Agrotech -->
+                    <div
+                        class="bg-gradient-to-br from-white/30 via-[#091F38] to-white/30 p-6 rounded-xl shadow-lg flex flex-col h-full border">
+                        <h3 class="text-white text-xl font-semibold">Agrotech</h3>
+                        <p class="text-gray-300 text-sm mt-2">
+                            Check out our product and services for Agribusiness, including solution like automated
+                            irrigation, light sensors, power plants, and monitoring.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Firewall and Security - Large Card -->
+                <div
+                    class="bg-gradient-to-bl from-white/30 via-[#091F38] to-white/30 rounded-xl shadow-lg relative overflow-hidden md:col-span-2 md:row-span-2 h-[200px] md:h-[380px]">
+                    <img src="Assets/Image_s/img-product-02.png" alt="Firewall and Security"
+                        class="w-full h-full object-cover absolute inset-0">
+                    <div class="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/80 to-transparent p-3">
+                        <h3 class="text-white text-2xl font-semibold">Firewall and Security</h3>
+                        <p class="text-gray-300 text-sm mt-2">
+                            Physical and remote firewalls, Fortigate, Sonicwall, Cisco, managed by Wexcom’s team.
+                            Various
+                            hardware and software options available, including anti-DDOS systems”
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+
+
+        <section id="services" class="mt-16">
+
+            <div class="max-w-6xl mx-auto text-center">
+                <button class="bg-gray-800 text-gray-300 px-3 py-2 rounded-full inline-flex items-center gap-2 border">
+                    <img src="Assets/Iconic_s Pattern.svg" alt="Icon" class="h-5 w-5">
+                    Service and Solution in Software
+                </button>
+            </div>
+
+            <div class="max-w-6xl mx-auto text-center mt-12">
+                <h2 class="text-3xl font-bold text-white mb-2">Maximize your Solutive Facilities</h2>
+                <h2 class="text-3xl font-bold ">with <span class="text-3xl font-bold text-[#42D4B5]">Wexcom</span></h2>
+            </div>
+
+            <!-- Grid utama -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-6xl mx-auto mt-12">
+                <!-- Card 1 -->
+                <div
+                    class="bg-gradient-to-bl from-white/30 via-[#091F38] to-white/30 p-6 rounded-xl shadow-lg flex flex-col h-full border">
+                    <h3 class="text-white text-lg font-semibold">01</h3>
+                    <h3 class="text-white text-lg font-semibold mt-3">Smart Network</h3>
+                    <p class="text-gray-300 text-sm mt-3 text-justify">
+                        We build, install, and manage your voice and data network, using top market products such as
+                        Cisco,
+                        Juniper, Huawei, and Polycom, Yealink, and Grandstream, among others.
+                    </p>
+                </div>
+
+                <!-- Card 2 -->
+                <div
+                    class="bg-gradient-to-bl from-white/30 via-[#091F38] to-white/30 p-6 rounded-xl shadow-lg flex flex-col h-full border">
+                    <h3 class="text-white text-lg font-semibold">02</h3>
+                    <h3 class="text-white text-lg font-semibold mt-3">Smart Firewall</h3>
+                    <p class="text-gray-300 text-sm mt-3 text-justify">
+                        Firewall management, maintenance, and installation with 24x7 monitoring, DDOS and Ransomware
+                        prevention, and protection against other cyber threats. Security and fault detection projects.
+                    </p>
+                </div>
+
+                <!-- Card 3 -->
+                <div
+                    class="bg-gradient-to-bl from-white/30 via-[#091F38] to-white/30 p-6 rounded-xl shadow-lg flex flex-col h-full border">
+                    <h3 class="text-white text-lg font-semibold">03</h3>
+                    <h3 class="text-white text-lg font-semibold mt-3">Smart Database Administration</h3>
+                    <p class="text-gray-300 text-sm mt-3 text-justify">
+                        Database administration and maintenance, including ORACLE, MICROSOFT, MYSQL, and PostgreSQL
+                        products. Routine maintenance.
+                    </p>
+                </div>
+
+                <!-- Card 4 -->
+                <div
+                    class="bg-gradient-to-bl from-white/30 via-[#091F38] to-white/30 p-6 rounded-xl shadow-lg flex flex-col h-full border">
+                    <h3 class="text-white text-lg font-semibold">04</h3>
+                    <h3 class="text-white text-lg font-semibold mt-3">Smart Software</h3>
+                    <p class="text-gray-300 text-sm mt-3 text-justify">
+                        Antivirus activation and management, such as Sophos and Kaspersky, and operating system updates,
+                        including AIX, Linux, Windows, FreeBsd, and Oracle Cloud.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Grid bawah -->
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-4 max-w-6xl mx-auto mt-10">
+                <!-- Card 5 -->
+                <div class="w-64">
+                    <h3 class="text-[#42D4B5] text-lg font-semibold">05</h3>
+                    <h3 class="text-white text-lg font-semibold">Smart Hardware & Storage</h3>
+                    <hr class="border-t-2 border-[#42D4B5] my-4" />
+                    <p class="text-gray-300 text-sm mt-2 text-justify">
+                        We install, connect, and administer hardware from Dell, HP, IBM, EMC, Mikrotik, Rufus, Seagate,
+                        EMC,
+                        Oracle, and Aruba.
+                    </p>
+                </div>
+
+                <!-- Card 6 -->
+                <div class="w-64">
+                    <h3 class=" text-[#42D4B5] text-lg font-semibold">06</h3>
+                    <h3 class="text-white text-lg font-semibold">Smart Monitor</h3>
+                    <hr class="border-t-2 border-[#42D4B5] my-4" />
+                    <p class="text-gray-300 text-sm mt-2 text-justify">
+                        Automated monitoring through renowned tools like Zabbix and Nagios, ticket opening, and repair,
+                        without requiring client interaction.
+                    </p>
+                </div>
+
+                <!-- Card 7 -->
+                <div class="w-64">
+                    <h3 class="text-[#42D4B5] text-lg font-semibold">07</h3>
+                    <h3 class="text-white text-lg font-semibold">Smart Inventory</h3>
+                    <hr class="border-t-2 border-[#42D4B5] my-4" />
+                    <p class="text-gray-300 text-sm mt-2 text-justify">
+                        Manage your product and equipment inventory through online tools, Smart DB, and Smart Cloud.
+                    </p>
+                </div>
+
+                <!-- Card 8 -->
+                <div class="w-64">
+                    <h3 class="text-[#42D4B5] text-lg font-semibold">08</h3>
+                    <h3 class="text-white text-lg font-semibold">Smart Crypto</h3>
+                    <hr class="border-t-2 border-[#42D4B5] my-4" />
+                    <p class="text-gray-300 text-sm mt-2 text-justify">
+                        Cryptocurrency payment methods, including money and card payments in PoS.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+
+
+
+
+        <section id="fiber" class="mt-16">
+
+            <div class="max-w-6xl mx-auto">
+
+                <button
+                    class="bg-gray-800 text-gray-300 px-3 py-2 rounded-full inline-flex items-center gap-2 border mt-12">
+                    <img src="Assets/Iconic_s Pattern.svg" alt="Icon" class="h-5 w-6">
+                    Fiber Solution
+                </button>
+
+                <!-- Header -->
+                <div class="text-left md:flex justify-between items-start mt-12">
+                    <div>
+                        <h2 class="text-3xl font-bold text-white mb-2">Optimizing behalf</h2>
+                        <h2 class="text-3xl font-bold text-white">Infrastructure</h2>
+                    </div>
+                    <p class="text-gray-300 text-sm max-w-lg mt-4 md:mt-0">
+                        High-speed and High-Capacity Internet access through our own Fiber-Optic Network.
+                    </p>
+                </div>
+
+                <!-- First Grid Row (Responsive) -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
+                    <!-- Smart Internet -->
+                    <div
+                        class="bg-gradient-to-bl from-white/30 via-[#091F38] to-white/30 p-6 rounded-xl shadow-lg flex flex-col h-full border">
+                        <div class="flex items-center space-x-3">
+                            <h2 class="text-white text-xl font-semibold flex-grow">Smart Internet</h2>
+                            <img src="Assets/Icon Set Pack_s-01/Internet-Icon.svg" class="w-12 h-12"
+                                alt="Internet Icon">
+                        </div>
+                        <p class="text-gray-300 text-sm mt-6 text-justify">
+                            High-speed and high-capacity Internet access through our own fiber-optic network.
+                        </p>
+                    </div>
+
+                    <!-- Smart Transit -->
+                    <div
+                        class="bg-gradient-to-bl from-white/30 via-[#091F38] to-white/30 p-6 rounded-xl shadow-lg flex flex-col h-full border">
+                        <div class="flex items-center space-x-3">
+                            <h3 class="text-white text-xl font-semibold flex-grow">Smart Transit</h3>
+                            <img src="Assets/Icon Set Pack_s-01/Transit Icon.svg" class="w-12 h-12" alt="Transit Icon">
+                        </div>
+                        <p class="text-gray-300 text-sm mt-6 text-justify">
+                            Utilize Wexcom's underground network to interconnect your branches, ensuring the best
+                            connection between points.
+                        </p>
+                    </div>
+
+                    <!-- Smart Pipe -->
+                    <div
+                        class="bg-gradient-to-bl from-white/30 via-[#091F38] to-white/30 p-6 rounded-xl shadow-lg flex flex-col h-full border">
+                        <div class="flex items-center space-x-3">
+                            <h3 class="text-white text-xl font-semibold flex-grow">Smart Pipe</h3>
+                            <img src="Assets/Icon Set Pack_s-01/Pipe-Icon.svg" class="w-12 h-12" alt="Pipe Icon">
+                        </div>
+                        <p class="text-gray-300 text-sm mt-6 text-justify">
+                            Leverage our underground network for your network projects and point-to-point transport at a
+                            competitive cost.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Second Grid Row (with optional image) -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-10 md:ml-48">
+                    <!-- Smart CDN -->
+                    <div
+                        class="bg-gradient-to-bl from-white/30 via-[#091F38] to-white/30 p-6 rounded-xl shadow-lg flex flex-col h-64 max-w-[370px] max-h-[600px] mx-auto overflow-hidden border relative z-20">
+                        <div class="flex items-center space-x-3">
+                            <h3 class="text-white text-xl font-semibold flex-grow">Smart CDN</h3>
+                            <img src="Assets/Icon Set Pack_s-01/Multimedia-Icon.svg" class="w-12 h-12" alt="CDN Icon">
+                        </div>
+                        <p class="text-gray-300 text-sm mt-6 text-justify">
+                            Access content from various operators directly without intermediaries. Simply connect to our
+                            Edgedata centers and access content from Amazon, Netflix, Google, Telefonica, and many
+                            others.
+                        </p>
+                    </div>
+
+                    <!-- Illustration Image -->
+                    <div
+                        class="shadow-lg flex flex-col h-full max-w-[370px] max-h-[600px] mx-auto overflow-hidden absolute z-10 md:ml-[500px]">
+                        <img src="Assets/Image_s/img-ai.png" class="rounded-xl shadow-lg"
+                            alt="Cyber Security Illustration">
+                    </div>
+                </div>
+
+                <!-- Third Grid Row (Responsive) -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-10">
+                    <!-- Smart Router & Switching -->
+                    <div
+                        class="bg-gradient-to-bl from-white/30 via-[#091F38] to-white/30 p-6 rounded-xl shadow-lg flex flex-col h-full border z-20">
+                        <div class="flex items-center space-x-3">
+                            <h3 class="text-white text-xl font-semibold flex-grow">Smart Router & Switching</h3>
+                            <img src="Assets/Icon Set Pack_s-01/Switching-Icon.svg" class="w-12 h-12" alt="Router Icon">
+                        </div>
+                        <p class="text-gray-300 text-sm mt-6 text-justify">
+                            We manage your router, switches, IP addresses, and equipment, so you can focus on growing
+                            your business.
+                        </p>
+                    </div>
+
+                    <!-- Smart Career -->
+                    <div
+                        class="bg-gradient-to-bl from-white/30 via-[#091F38] to-white/30 p-6 rounded-xl shadow-lg flex flex-col h-full border z-20">
+                        <div class="flex items-center space-x-3">
+                            <h3 class="text-white text-xl font-semibold flex-grow">Smart Career</h3>
+                            <img src="Assets/Icon Set Pack_s-01/Connected-Icon.svg" class="w-12 h-12" alt="Career Icon">
+                        </div>
+                        <p class="text-gray-300 text-sm mt-6 text-justify">
+                            Multiple telecom operators maintain their networks with Wexcom. We keep you connected,
+                            managing interconnections, gateways, and servers.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+
+
+
+
+
+
+
+
+
+
+        <section id="telecom" class="mt-16">
+
+            <div class=" max-w-6xl mx-auto">
+
+                <div class="max-w-6xl mx-auto text-center mt-12">
+                    <button
+                        class="bg-gray-800 text-gray-300 px-3 py-2 rounded-full inline-flex items-center gap-2 border mt-12">
+                        <img src="Assets/Iconic_s Pattern.svg" alt="Icon" class="h-5 w-5">
+                        Telecom Solution
+                    </button>
+                </div>
+                <!-- Header -->
+                <div class="text-center mt-12">
+                    <h2 class="text-white text-3xl font-bold">What we Provide to make</h2>
+                    <h2 class="text-white text-3xl font-bold">Communication Better</h2>
+                </div>
+
+                <!-- Grid Utama -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-12">
+                    <!-- Smart SMS (Box Besar) -->
+                    <div
+                        class="bg-gradient-to-bl from-white/10 via-[#091F38] to-white/30 p-12 rounded-xl shadow-lg md:col-span-2 grid grid-cols-1 md:grid-cols-2 gap-4 border">
+                        <!-- Left Column: "01", "Smart SMS", and description -->
+                        <div class="">
+                            <span class="text-white text-3xl">01</span>
+
+
+                        </div>
+
+                        <!-- Right Column: Image -->
+                        <div class="">
+                            <p class="text-white text-lg mt-2 ">Send mass text messages, manage and track your
+                                sends.</p>
+
+                        </div>
+
+                        <div class="">
+
+                            <h3 class="text-white text-5xl font-bold">Smart
+                                <br>
+                                SMS
+                            </h3>
+
+                        </div>
+
+                        <!-- Right Column: Image -->
+                        <div class="">
+
+                            <div class="text-center mx-24">
+                                <img src="Assets/Icon Set Pack_s-02/Smart SMS.svg" class="w-48 h-48" alt="SMS Icon">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Smart RCS -->
+                    <div
+                        class="bg-gradient-to-bl from-white/10 via-[#091F38] to-white/30 p-12 rounded-xl shadow-lg border bg-gradient-to-r from-white via-grey-500 to-grey-700">
+                        <div class="grid grid-cols-1 md:grid-cols-2 items-center gap-4">
+                            <!-- Left Column: "Smart RCS" Title -->
+                            <div>
+                                <h3 class="text-white text-3xl font-bold">Smart RCS</h3>
+                            </div>
+
+                            <!-- Right Column: Number "02" -->
+                            <div class="flex justify-end">
+                                <span class="text-white text-3xl">02</span>
+                            </div>
+                        </div>
+
+                        <!-- Image Row: Image centered below the title and number -->
+                        <div class="flex justify-center mt-4">
+                            <img src="Assets/Icon Set Pack_s-02/Smart RCS.svg" class="w-24 h-24" alt="Smart RCS Icon">
+                        </div>
+
+                        <!-- Description -->
+                        <p class="text-gray-300 text-sm mt-6 text-center">
+                            Use our Cloud Platform for Google RCS messaging.
+                        </p>
+                    </div>
+
+
+                    <!-- Smart BOT Voice -->
+
+                    <div
+                        class="bg-gradient-to-bl from-white/10 via-[#091F38] to-white/30 p-12 rounded-xl shadow-lg border bg-gradient-to-r from-white via-grey-500 to-grey-700">
+                        <div class="grid grid-cols-1 md:grid-cols-2 items-center gap-1">
+                            <!-- Left Column: "Smart RCS" Title -->
+                            <div class="w-12">
+
+                                <span class="text-white text-3xl">03</span>
+                            </div>
+
+                            <!-- Right Column: Number "02" -->
+                            <div class="flex justify-center">
+                                <h3 class="text-white text-2xl font-bold">Smart BOT Voice</h3>
+
+                            </div>
+                        </div>
+
+                        <!-- Image Row: Image centered below the title and number -->
+                        <div class="flex justify-center mt-4">
+                            <img src="Assets/Icon Set Pack_s-02/Smart Bot.svg" class="w-24 h-24" alt="Smart RCS Icon">
+                        </div>
+
+                        <!-- Description -->
+                        <p class="text-gray-300 text-sm mt-6 text-center">
+                            Send voice calls through Chat Box.
+                        </p>
+                    </div>
+
+
+
+                </div>
+
+                <!-- Daftar Layanan Tambahan -->
+                <div class="mt-8 space-y-4 w-4/5 mx-auto md:mr-0">
+                    <!-- Smart SIP & Voice Calls -->
+                    <div class="flex flex-col md:flex-row justify-between items-center border-b border-gray-600 pb-12">
+                        <p class="text-white text-lg md:w-1/4">04.</p>
+                        <p class="text-white text-lg font-bold md:w-1/2">Smart SIP & Voice Calls</p>
+                        <p class="text-gray-300 text-sm max-w-md md:w-1/4 text-justify">
+                            Free Flow: Make SIP calls without channel limits, in HD Quality, through our international
+                            offshore network.
+                        </p>
+                    </div>
+
+                    <!-- Smart DID -->
+                    <div class="flex flex-col md:flex-row justify-between items-center border-b border-gray-600 pb-12">
+                        <p class="text-white text-lg md:w-1/4">05.</p>
+                        <p class="text-white text-lg font-bold md:w-1/2">Smart DID</p>
+                        <p class="text-gray-300 text-sm max-w-md md:w-1/4 text-justify">
+                            Get unlimited numbers for your business, shareable with your WhatsApp Business.
+                        </p>
+                    </div>
+
+                    <!-- Smart PBX -->
+                    <div class="flex flex-col md:flex-row justify-between items-center border-b border-gray-600 pb-12">
+                        <p class="text-white text-lg md:w-1/4">06.</p>
+                        <p class="text-white text-lg font-bold md:w-1/2">Smart PBX</p>
+                        <p class="text-gray-300 text-sm max-w-md md:w-1/4 text-justify">
+                            Your PBX with entry number and IP Phones, fully managed by Wexcom's team.
+                        </p>
+                    </div>
+
+                    <!-- Smart CRM -->
+                    <div class="flex flex-col md:flex-row justify-between items-center border-b border-gray-600 pb-12">
+                        <p class="text-white text-lg md:w-1/4">07.</p>
+                        <p class="text-white text-lg font-bold md:w-1/2">Smart CRM</p>
+                        <p class="text-gray-300 text-sm max-w-md md:w-1/4 text-justify">
+                            ACRA CRM: A complete CRM solution for your Call Center. &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                        </p>
+                    </div>
+                </div>
+
+
+            </div>
+        </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <section id="contactus" class="mt-16">
+
+            <div class="max-w-6xl mx-auto">
+                <!-- Contact Us -->
+                <div
+                    class="bg-gradient-to-bl from-white/20 via-[#091F38] to-white/20 p-8 rounded-xl shadow-lg border grid md:grid-cols-2 gap-8  bg-gradient-to-r from-white via-grey-500 to-grey-700">
+                    <!-- Left Column: Contact Us (Now Contact Us is on top, Customer Support below) -->
+                    <div class="flex flex-col space-y-4">
+                        <div>
+                            <h3 class="text-white text-sm">Contact Us</h3>
+                            <h2 class="text-white text-2xl font-bold mt-32">
+                                We're here to Provide Your Questions
+                            </h2>
+                        </div>
+                        <div>
+
+                            <h2 class="text-white text-xl font-bold mt-12">
+                                Customer Support
+                            </h2>
+                            <p class="text-gray-300 mt-2">
+
+                                Our support team is available around the clock to help you with any queries.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Right Column: Form -->
+                    <form class="grid grid-cols-1 gap-4">
+                        <input type="text" placeholder="Name"
+                            class="bg-[#0F2A45] p-3 rounded-md text-white focus:outline-none border-2 border-[rgba(255,255,255,0.5)]">
+                        <input type="text" placeholder="Company"
+                            class="bg-[#0F2A45] p-3 rounded-md text-white focus:outline-none border-2 border-[rgba(255,255,255,0.5)]">
+                        <input type="text" placeholder="Phone"
+                            class="bg-[#0F2A45] p-3 rounded-md text-white focus:outline-none border-2 border-[rgba(255,255,255,0.5)] col-span-2">
+                        <input type="email" placeholder="Email"
+                            class="bg-[#0F2A45] p-3 rounded-md text-white focus:outline-none border-2 border-[rgba(255,255,255,0.5)] col-span-2">
+                        <textarea placeholder="Desired Service"
+                            class="bg-[#0F2A45] p-3 rounded-md text-white focus:outline-none border-2 border-[rgba(255,255,255,0.5)] col-span-2"></textarea>
+                        <button
+                            class="bg-gradient-to-r from-teal-400 to-blue-500 text-white font-bold py-3 rounded-md col-span-2">Submit</button>
+                    </form>
+                </div>
+
+
+
+
+                <!-- Partnerships and Certifications -->
+                <div class="text-center mt-32">
+                    <h2 class="text-white text-2xl font-bold">Partnerships and Certifications</h2>
+                    <div class="border-t border-gray-600 mt-4 mb-6 w-24 mx-auto"></div>
+
+                    <!-- First Grid Row -->
+                    <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-0.5 text-center items-center">
+                        <img src="Assets/Brand Logo_s-02/Oracle - Grayscale.svg" alt="ORACLE Logo"
+                            class="h-32 w-auto filter invert brightness-50 max-w-full object-contain">
+                        <img src="Assets/Brand Logo_s-02/Dell - Grayscale.svg" alt="Dell Logo"
+                            class="h-32 w-auto filter invert brightness-50 max-w-full object-contain">
+                        <img src="Assets/Brand Logo_s-02/HP - Grayscale.svg" alt="HP Logo"
+                            class="h-16 w-auto filter invert brightness-50 max-w-full object-contain ml-6">
+                        <img src="Assets/Brand Logo_s-02/IBM - Grayscale.svg" alt="IBM Logo"
+                            class="h-32 w-auto filter invert brightness-50 max-w-full object-contain">
+                        <img src="Assets/Brand Logo_s-02/Yealink - Grayscale.svg" alt="Yealink Logo"
+                            class="h-32 w-auto filter invert brightness-50 max-w-full object-contain">
+                        <img src="Assets/Brand Logo_s-02/Ciena - Grayscale.svg" alt="Ciena Logo"
+                            class="h-32 w-auto filter invert brightness-50 max-w-full object-contain">
+                    </div>
+
+                    <!-- Second Grid Row -->
+                    <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-7 gap-0.5  mt-2 items-center">
+                        <img src="Assets/Brand Logo_s-02/Juniper - Grayscale.svg" alt="Juniper Logo"
+                            class="h-32 w-auto filter invert brightness-50 max-w-full object-contain">
+                        <img src="Assets/Brand Logo_s-02/Apple - Grayscale.svg" alt="Apple Logo"
+                            class="h-16 w-auto filter invert brightness-50 max-w-full object-contain ml-6">
+                        <img src="Assets/Brand Logo_s-02/EMC - Grayscale.svg" alt="EMC² Logo"
+                            class="h-32 w-auto filter invert brightness-50 max-w-full object-contain">
+                        <img src="Assets/Brand Logo_s-02/Sophos - Grayscale.svg" alt="Sophos Logo"
+                            class="h-32 w-auto filter invert brightness-50 max-w-full object-contain">
+                        <img src="Assets/Brand Logo_s-02/Kaspersky - Grayscale.svg" alt="Kaspersky Logo"
+                            class="h-32 w-auto filter invert brightness-50 max-w-full object-contain">
+                        <img src="Assets/Brand Logo_s-02/Microsoft - Grayscale.svg" alt="Microsoft Logo"
+                            class="h-32 w-auto filter invert brightness-50 max-w-full object-contain">
+                        <img src="Assets/Brand Logo_s-02/Amazon Web Service - Grayscale.svg" alt="AWS Logo"
+                            class="h-24 w-auto filter invert brightness-50 max-w-full object-contain">
+                    </div>
+
+                    <!-- Third Grid Row -->
+                    <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-0.5 text-center mt-2 items-center">
+                        <img src="Assets/Brand Logo_s-02/Google Cloud - Grayscale.svg" alt="Google Cloud Logo"
+                            class="h-32 w-auto filter invert brightness-50 max-w-full object-contain">
+                        <img src="Assets/Brand Logo_s-02/Microsoft Azure - Grayscale.svg" alt="Azure Logo"
+                            class="h-32 w-auto filter invert brightness-50 max-w-full object-contain">
+                        <img src="Assets/Brand Logo_s-02/Aruba - Grayscale.svg" alt="Aruba Logo"
+                            class="h-32 w-auto filter invert brightness-50 max-w-full object-contain">
+                        <img src="Assets/Brand Logo_s-02/Ruckus Wireless - Grayscale.svg" alt="Ruckus Logo"
+                            class="h-32 w-auto filter invert brightness-50 max-w-full object-contain">
+                        <img src="Assets/Brand Logo_s-02/Purple - Grayscale.svg" alt="Purple Logo"
+                            class="h-32 w-auto filter invert brightness-50 max-w-full object-contain">
+                        <img src="Assets/Brand Logo_s-02/Cisco - Grayscale.svg" alt="Cisco Logo"
+                            class="h-32 w-auto filter invert brightness-50 max-w-full object-contain">
+
+                    </div>
+
+                    <!-- Fourth Grid Row -->
+                    <div class="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-6 gap-0.5 text-center mt-2 justify-center">
+                        <img src="Assets/Brand Logo_s-02/Huawei - Grayscale.svg" alt="Huawei Logo"
+                            class="h-32 w-auto filter invert brightness-50 max-w-full object-contain">
+                        <img src="Assets/Brand Logo_s-02/Netgear - Grayscale.svg" alt="Netgear Logo"
+                            class="h-32 w-auto filter invert brightness-50 max-w-full object-contain">
+                        <img src="Assets/Brand Logo_s-02/D-Link - Grayscale.svg" alt="D-Link Logo"
+                            class="h-32 w-auto filter invert brightness-50 max-w-full object-contain">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+
+
+
+
+
+
+        <!-- Footer -->
+        <!-- Footer -->
+        <footer class="px-6 relative">
+            <div
+                class="bg-gradient-to-bl from-white/20 via-[#091F38] to-white/20 p-6 md:p-20 rounded-xl shadow-lg border max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8 text-white text-center md:text-left">
+                <!-- Logo Section -->
+                <div>
+                    <img src="Assets/Logo.svg" alt="Wexcom Logo" class="h-7 mx-auto md:ml-0 transition-all duration-300"
+                        id="logo">
+                    <p class="text-gray-300 text-sm mt-6 md:mt-12">
+                        <strong>Coverage Area</strong><br>
+                        United States, Canada, Mexico, Panama, Brazil, Colombia, Chile, Portugal, France, Italy,
+                        Germany, Spain, UAE, and Singapore.
+                    </p>
+                </div>
+
+                <!-- Company Section -->
+                <div>
+                    <h3 class="font-bold text-xl">Company</h3>
+                    <ul class="text-gray-300 text-sm space-y-2 mt-2">
+                        <li>About Us</li>
+                        <li>Products</li>
+                        <li>Service’s Software</li>
+                        <li>Fiber</li>
+                        <li>Telecom</li>
+                    </ul>
+                </div>
+
+                <!-- Social Media Section -->
+                <div>
+                    <h3 class="font-bold text-xl">Social Media</h3>
+                    <ul class="text-gray-300 text-sm space-y-2 mt-2">
+                        <li class="flex items-center justify-center md:justify-start gap-2">
+                            <div class="w-8 h-8 rounded-full bg-gray-700 flex items-center justify-center">
+                                <img src="Assets/Social Media/Instagram.svg" alt="Instagram Icon" class="w-5 h-5">
+                            </div>
+                            Instagram
+                        </li>
+                        <li class="flex items-center justify-center md:justify-start gap-2">
+                            <div class="w-8 h-8 rounded-full bg-gray-700 flex items-center justify-center">
+                                <img src="Assets/Social Media/X.svg" alt="Twitter Icon" class="w-5 h-5">
+                            </div>
+                            Twitter
+                        </li>
+                        <li class="flex items-center justify-center md:justify-start gap-2">
+                            <div class="w-8 h-8 rounded-full bg-gray-700 flex items-center justify-center">
+                                <img src="Assets/Social Media/Facebook.svg" alt="Facebook Icon" class="w-5 h-5">
+                            </div>
+                            Facebook
+                        </li>
+                        <li class="flex items-center justify-center md:justify-start gap-2">
+                            <div class="w-8 h-8 rounded-full bg-gray-700 flex items-center justify-center">
+                                <img src="Assets/Social Media/Linked In.svg" alt="LinkedIn Icon" class="w-5 h-5">
+                            </div>
+                            LinkedIn
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Contact Us Section -->
+                <div>
+                    <h3 class="font-bold text-xl">Contact Us</h3>
+                    <p class="text-gray-300 text-sm mt-2">
+                        +65 6653 8085<br>
+                        hello@wexcom.net<br>
+                        One Neil Road, #02, Brazil
+                    </p>
+                </div>
+            </div>
+
+            <!-- Footer Bottom -->
+            <div class="text-center text-gray-400 text-sm mt-6 max-w-6xl mx-auto">
+                <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+                    <p>© 2025 Wexcom. All Rights Reserved</p>
+                    <div class="flex flex-col md:flex-row items-center gap-4">
+                        <span class="text-gray-300">We Accept Payment Gateway</span>
+                        <div class="flex gap-4">
+                            <div class="bg-white p-1 shadow-md">
+                                <img src="Assets/Payment Icons/Paypal.svg" alt="PayPal" class="h-12 w-24">
+                            </div>
+                            <div class="bg-white p-1 shadow-md">
+                                <img src="Assets/Payment Icons/Master Card.svg" alt="MasterCard" class="h-12 w-24">
+                            </div>
+                            <div class="bg-white p-1 shadow-md">
+                                <img src="Assets/Payment Icons/Visa.svg" alt="VISA" class="h-12 w-24">
+                            </div>
+                            <div class="bg-white p-1 shadow-md">
+                                <img src="Assets/Payment Icons/Apple Pay.svg" alt="Apple Pay" class="h-12 w-24">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+
+
+    </div>
+
+</body>
+
+<script>
+    // Mobile Menu Toggle with animation
+    const menuBtn = document.getElementById('menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const mobileOverlay = document.getElementById('mobile-overlay');
+    const logo = document.getElementById('logo');
+
+    menuBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+        mobileOverlay.classList.toggle('hidden');
+        mobileMenu.classList.toggle('translate-x-full');
+        mobileMenu.classList.toggle('translate-x-0');
+        mobileOverlay.classList.toggle('opacity-0');
+        mobileOverlay.classList.toggle('opacity-100');
+        logo.classList.toggle('h-5'); // Smaller logo on mobile
+    });
+
+    // Close menu when clicking on overlay
+    mobileOverlay.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+        mobileOverlay.classList.add('hidden');
+        mobileMenu.classList.add('translate-x-full');
+        mobileMenu.classList.remove('translate-x-0');
+        mobileOverlay.classList.remove('opacity-100');
+        mobileOverlay.classList.add('opacity-0');
+        logo.classList.remove('h-5'); // Reset logo size
+    });
+</script>
+
+</html>
